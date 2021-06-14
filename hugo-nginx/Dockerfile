@@ -1,4 +1,4 @@
-FROM 0.83.1-ext-alpine as hugo
+FROM klakegg/hugo:0.83.1-ext-alpine as hugo
 
 FROM nginx:alpine
 
