@@ -1,4 +1,4 @@
-FROM 0.83.1-ext-alpine-ci
+FROM klakegg/hugo:0.83.1-ext-alpine-ci
 
 RUN apk --no-cache add nginx ca-certificates
 
