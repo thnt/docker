@@ -4,4 +4,4 @@ FROM nginx:alpine
 
 RUN apk --no-cache add git
 
-COPY --from=hugo /bin/hugo-official /usr/bin/hugo
+COPY --from=hugo /usr/lib/hugo/hugo /usr/bin/hugo
