@@ -1,7 +1,5 @@
-FROM klakegg/hugo:0.83.1-ext-alpine as hugo
+FROM 0.83.1-ext-alpine-ci
 
-FROM nginx:alpine
+RUN apk --no-cache add nginx ca-certificates
 
-RUN apk --no-cache add git
-
-COPY --from=hugo /usr/lib/hugo/hugo /usr/bin/hugo
+CMD ["nginx", "-g", "daemon off;"]
