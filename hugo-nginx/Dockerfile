@@ -2,4 +2,4 @@ FROM klakegg/hugo:0.83.1-ext-alpine as hugo
 
 FROM nginx:alpine
 
-COPY --from=hugo /bin/hugo /usr/bin/hugo
+COPY --from=hugo /bin/hugo-official /usr/bin/hugo
