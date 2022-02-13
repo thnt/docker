@@ -1,9 +1,9 @@
-FROM node:16 AS build-env
+FROM node:lts-alpine
+
+RUN apk add --no-cache --no-progress chromium
+
 COPY . /app
 WORKDIR /app
 RUN yarn
 
-FROM gcr.io/distroless/nodejs:16
-COPY --from=build-env /app /app
-WORKDIR /app
 CMD ["server.js"]
