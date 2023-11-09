@@ -7,7 +7,7 @@ on:
 jobs:
 
   build_superset:
-    if: startsWith(github.ref, 'refs/tags/superset-')
+    # if: startsWith(github.ref, 'refs/tags/superset-')
     runs-on: ubuntu-latest
 
     steps:
