@@ -1,4 +1,4 @@
-FROM apache/superset:3.0.0
+FROM apache/superset:3.0.1
 
 USER root
 RUN pip install clickhouse-connect
