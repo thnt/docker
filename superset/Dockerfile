@@ -1,4 +1,4 @@
-FROM apache/superset:3.1.0
+FROM apache/superset:3.1.0-py310
 
 USER root
 RUN pip install clickhouse-connect shillelagh 'shillelagh[all]'
