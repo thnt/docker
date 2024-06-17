@@ -1,3 +1,4 @@
+#TAG:1.22
 FROM golang:1.22
 
 RUN go install github.com/vektra/mockery/v2@latest
