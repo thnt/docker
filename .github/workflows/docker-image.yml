@@ -28,7 +28,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Get tag
       run: |
-        TAG=$(grep -oP '(?<=${{ matrix.images }}:)([0-9.]*)' ${{ github.event.commits[0].message }}) || true
+        TAG=$(echo -n "${{ github.event.commits[0].message }}" | grep -oP '(?<=${{ matrix.images }}:)([0-9.]*)') || true
         echo "tag=${TAG}"
         echo "IMAGE_TAG=${TAG:-latest}" >> $GITHUB_ENV
     - name: Build and push
