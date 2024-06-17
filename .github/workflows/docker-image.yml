@@ -7,6 +7,7 @@ on:
    paths:
      - golangci/**
      - superset/**
+     - .github/**
 
 jobs:
 
@@ -31,6 +32,7 @@ jobs:
         TAG=$(grep -oP '(?<=#TAG:).*' ${{ matrix.images }}/Dockerfile) || true
         echo "tag=${TAG}"
         echo "IMAGE_TAG=${TAG:-latest}" >> $GITHUB_ENV
+        echo "payload=${{ github.event }}"
     - name: Build and push
       if: ${{ github.event.head_commit.modified && contains(github.event.head_commit.modified, matrix.images) }}
       uses: docker/build-push-action@v5
