@@ -1,3 +1,4 @@
+#TAG:4.0.0
 FROM apache/superset:4.0.0
 
 USER root
