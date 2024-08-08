@@ -7,6 +7,7 @@ on:
    paths:
      - golangci/**
      - superset/**
+     - hugo-nginx/**
 
 jobs:
 
@@ -15,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        images: [golangci, superset]
+        images: [golangci, superset, hugo-nginx]
 
     steps:
     - uses: actions/checkout@v4
