@@ -1,5 +1,3 @@
-FROM klakegg/hugo:0.101.0-ext-alpine
+FROM nginx:alpine
 
-RUN apk --no-cache add nginx ca-certificates && mkdir /run/nginx
-
-CMD ["nginx", "-g", "daemon off;"]
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community hugo
